@@ -13,6 +13,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 // import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 
 
@@ -21,7 +22,9 @@ export default function TopNavbar() {
   const navRef = useRef<HTMLDivElement>(null);
   const navigationRoutes = [
     "home",
-    "about"
+    "skills",
+    "projects",
+    "contact me",
   ];
 
   const { i18n, t } = useTranslation();
@@ -70,9 +73,11 @@ export default function TopNavbar() {
   // to lock the scroll when mobile is open
   function lockScroll() {
     const root = document.getElementsByTagName("html")[0];
-    root.classList.toggle("lock-scroll"); // class is define in the global.css
+    root.classList.toggle("overflow-hidden");
+    const main_section = document.getElementById("main");
+    main_section?.classList.toggle("blur")
   }
-
+  
   /* To Lock  the Scroll when user visit the mobile nav page */
   function handleClick() {
     lockScroll();
@@ -93,7 +98,7 @@ export default function TopNavbar() {
       <HamBurger open={navOpen} handleClick={handleClick} />
       <AnimatePresence>
         {navOpen && (
-          <MobileMenu links={["home", "about"]} handleClick={handleClick} />
+          <MobileMenu links={navigationRoutes} handleClick={handleClick} />
         )}
       </AnimatePresence>
 
@@ -141,12 +146,12 @@ export default function TopNavbar() {
           onChange={changeDarkMode}
           size={24}
         /> */}
-        <motion.p
+        <motion.button
           onClick={changeLanguage}
-          className="font-semibold text-gray-100"
+          className="font-semibold text-gray-100 p-2 rounded-md hover:bg-neutral-700/50"
         >
           EN/PL
-        </motion.p>
+        </motion.button>
       </motion.div>
     </div>
   );
@@ -154,22 +159,29 @@ export default function TopNavbar() {
 
 // NavItem Container
 function NavItem({ href, text }) {
-  const { i18next, t } = useTranslation();
+  const { t } = useTranslation();
   const isActive = useLocation() === (href === "/home" ? "/" : href);
   return (
-    <NavLink
-      className={`${
-        isActive
-          ? "font-bold text-gray-100"
-          : " text-gray-300"
-      } 
-      sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-black/10  dark:hover:bg-neutral-700/50 rounded-md`}
-      to={href === "/home" ? "/" : href}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={popUp}
+      className="cursor-pointer"
     >
-      <motion.p className="" >
-        {t("nav" + text.toUpperCase())}
-      </motion.p>
-    </NavLink>
+      <NavLink
+        className={`${
+          isActive
+            ? "font-bold text-gray-100"
+            : "text-gray-300"
+        } 
+        sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-neutral-700/50 rounded-md`}
+        to={href === "/home" ? "/" : href}
+      >
+        <motion.p className="" >
+          {t("nav" + text.toUpperCase())}
+        </motion.p>
+      </NavLink>
+    </motion.div>
   );
 }
 
@@ -236,10 +248,10 @@ const MobileMenu = ({
       animate="visible"
       exit="hidden"
     >
-      <motion.nav className="flex flex-col mx-8 mt-28">
+      <motion.nav className="flex flex-col mx-8 mt-14">
         {links.slice(0, 8).map((link, index) => {
           const navlink =
-            link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase()}`;
+            link.toLowerCase() === "home" ? "/" : `/#${link.toLowerCase()}`;
           return (
             <div
               href={navlink}
@@ -248,7 +260,7 @@ const MobileMenu = ({
               className="flex w-auto py-4 text-base font-semibold  capitalize border-b cursor-pointer border-gray-700 text-gray-100"
             >
               <motion.p variants={mobileNavItemSideways}>
-                {link === "rss" ? link.toUpperCase() : link}
+                {t("nav" + link.toUpperCase())}
               </motion.p>
             </div>
           );

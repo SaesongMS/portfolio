@@ -1,4 +1,10 @@
 {
     "navHOME": "Home",
-    "navABOUT": "About"
+    "navSKILLS": "Skills",
+    "navPROJECTS": "Projects",
+    "navCONTACT ME": "Contact",
+    "mainTitle1": "Hi, I'm Mateusz",
+    "mainTitle2": "Web Developer",
+    "mainDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates? Quos, quod. Quisquam, voluptates?",
+    "mainCV": "Resume"
 }

@@ -1,4 +1,10 @@
 {
     "navHOME": "Strona główna",
-    "navABOUT": "O mnie"
+    "navSKILLS": "Umiejętności",
+    "navPROJECTS": "Projekty",
+    "navCONTACT ME": "Kontakt",
+    "mainTitle1": "Cześć, jestem Mateusz",
+    "mainTitle2": "Web Developer",
+    "mainDescription": "haha naprawde myslales ze to przetlumacze? xD",
+    "mainCV": "CV"
 }
