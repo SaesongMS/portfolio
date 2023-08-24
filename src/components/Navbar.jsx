@@ -19,7 +19,7 @@ import { t } from "i18next";
 
 /* TopNavbar Component */
 export default function TopNavbar() {
-  const navRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef(null);
   const navigationRoutes = [
     "home",
     "skills",
@@ -44,8 +44,7 @@ export default function TopNavbar() {
         ...[
           "shadow",
           "backdrop-blur-xl",
-          "bg-white/70",
-          "dark:bg-darkSecondary",
+          "bg-darkSecondary"
         ]
       );
 
@@ -55,8 +54,7 @@ export default function TopNavbar() {
         ...[
           "shadow",
           "backdrop-blur-xl",
-          "bg-white/70",
-          "dark:bg-darkSecondary",
+          "bg-darkSecondary",
         ]
       );
       control.start("hidden");
@@ -92,7 +90,7 @@ export default function TopNavbar() {
   return (
     <div
       className="fixed w-full dark:text-white top-0 flex items-center justify-between px-4 py-[10px] sm:px-6 z-50 print:hidden"
-      // ref={navRef}
+      ref={navRef}
     >
       {/* Mobile Navigation Hamburger and MobileMenu */}
       <HamBurger open={navOpen} handleClick={handleClick} />
@@ -114,7 +112,6 @@ export default function TopNavbar() {
             }}
             className="font-sarina"
           >
-            Mateusz Stęgierski
           </motion.p>
         </div>
       </div>

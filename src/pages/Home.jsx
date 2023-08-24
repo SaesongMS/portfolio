@@ -14,7 +14,7 @@ export default function Home(){
         <TopNavbar />
         <div className="mt-20 md:mt-40 lg:mt-80" id="main">
             {/*Intoduction section*/}
-            <div className="flex-row flex gap-80 mb-60 mx-auto justify-center lg:mx-80">
+            <div className="flex flex-col md:flex-row md:gap-36 mb-80 mx-auto justify-center lg:mx-80">
                 <motion.div
                     initial={animate && "hidden"}
                     whileInView={animate ? "visible" : ""}
@@ -47,7 +47,7 @@ export default function Home(){
                             {t("mainDescription")}
                         </p>
                     </div>
-                    <button className="px-3 py-2 mt-5 text-base font-semibold text-gray-100 bg-[#646cff] rounded-md hover:bg-darkPrimary flex items-center">
+                    <button href="https://i.imgur.com/FSKQxDG.gif" className="px-3 py-2 mt-5 text-base font-semibold text-gray-100 bg-[#646cff] rounded-md hover:bg-darkPrimary flex items-center">
                         <p>
                             {t("mainCV")}
                         </p>
@@ -59,7 +59,7 @@ export default function Home(){
                     whileInView={animate ? "visible" : ""}
                     variants={fromRightVariant}
                     src="../../programmer.svg"
-                    className="w-60 h-60 rounded-full"
+                    className="w-80 h-80 rounded-full mx-auto"
                 />
 
             </div>

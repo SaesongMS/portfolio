@@ -9,7 +9,7 @@ import {
     SiGit,
     SiMongodb
 } from "react-icons/si"
-import { motion } from "framer-motion"
+import { motion, animate } from "framer-motion"
 import { FadeContainer, popUp } from "../assets/FramerMotionVariants";
 
 const skills = [
@@ -73,8 +73,8 @@ export default function Skills() {
     <div className=" md:mx-auto lg:mx-80">
         <p className="text-4xl font-semibold text-gray-100 font-sarina">Skills</p>
         <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={animate && "hidden"}
+            whileInView={animate ? "visible" : ""}
             variants={FadeContainer}
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10"
@@ -83,16 +83,18 @@ export default function Skills() {
                 const Icon = skill.icon;
                 return (
                     <motion.div
-                    variants={popUp}
-                    key={index}
-                    title={skill.name}
-                    onMouseMove={(e) =>
-                        showHoverAnimation(e)
-                    }
-                    onMouseLeave={(e) =>
-                        removeHoverAnimation(e)
-                    }
-                    className="flex flex-row items-center justify-center gap-4 p-4 origin-center transform border rounded-sm sm:justify-start  hover:bg-white bg-darkPrimary hover:bg-darkSecondary border-neutral-700 md:origin-top group"
+                        initial={animate && "hidden"}
+                        whileInView={animate ? "visible" : ""}
+                        variants={popUp}
+                        key={index}
+                        title={skill.name}
+                        onMouseMove={(e) =>
+                            showHoverAnimation(e)
+                        }
+                        onMouseLeave={(e) =>
+                            removeHoverAnimation(e)
+                        }
+                        className="flex flex-row items-center justify-center gap-4 p-4 origin-center transform border rounded-sm sm:justify-start  hover:bg-white bg-darkPrimary hover:bg-darkSecondary border-neutral-700 md:origin-top group"
                     >
                     <div className="relative transition pointer-events-none select-none group-hover:scale-110 sm:group-hover:scale-100">
                         <Icon className="w-8 h-8" fill="#747bff"/>
