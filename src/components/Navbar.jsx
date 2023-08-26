@@ -8,6 +8,7 @@ import {
   popUp,
 } from "../assets/FramerMotionVariants";
 import { NavLink, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 // import { useDarkMode } from "../context/darkModeContext";
 // import { navigationRoutes } from "../utils/utils";
 import Logo from "./Logo";
@@ -44,7 +45,7 @@ export default function TopNavbar() {
         ...[
           "shadow",
           "backdrop-blur-xl",
-          "bg-darkSecondary"
+          "bg-[#25282A]"
         ]
       );
 
@@ -54,7 +55,7 @@ export default function TopNavbar() {
         ...[
           "shadow",
           "backdrop-blur-xl",
-          "bg-darkSecondary",
+          "bg-[#25282A]",
         ]
       );
       control.start("hidden");
@@ -91,6 +92,7 @@ export default function TopNavbar() {
     <div
       className="fixed w-full dark:text-white top-0 flex items-center justify-between px-4 py-[10px] sm:px-6 z-50 print:hidden"
       ref={navRef}
+      id="navbar"
     >
       {/* Mobile Navigation Hamburger and MobileMenu */}
       <HamBurger open={navOpen} handleClick={handleClick} />
@@ -125,17 +127,17 @@ export default function TopNavbar() {
           className="flex items-center md:gap-2"
         >
           {navigationRoutes.slice(0, 7).map((link, index) => {
-            return <NavItem key={index} href={`/${link}`} text={link} />;
+            return <NavItem key={index} href={`${link}`} text={link} />;
           })}
         </motion.div>
       </motion.nav>
 
       {/* Language Container */}
       <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={popUp}
-        className="cursor-pointer"
+        // initial="hidden"
+        // animate="visible"
+        // variants={popUp}
+        className="cursor-pointer mr-20 md:mr-32 lg:mr-40 xl:mr-2"
         title="Toggle Language"
       >
         {/* <DarkModeSwitch
@@ -143,12 +145,12 @@ export default function TopNavbar() {
           onChange={changeDarkMode}
           size={24}
         /> */}
-        <motion.button
+        <button
           onClick={changeLanguage}
           className="font-semibold text-gray-100 p-2 rounded-md hover:bg-neutral-700/50"
         >
           EN/PL
-        </motion.button>
+        </button>
       </motion.div>
     </div>
   );
@@ -165,19 +167,19 @@ function NavItem({ href, text }) {
       variants={popUp}
       className="cursor-pointer"
     >
-      <NavLink
+      <HashLink
         className={`${
           isActive
             ? "font-bold text-gray-100"
             : "text-gray-300"
         } 
         sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-neutral-700/50 rounded-md`}
-        to={href === "/home" ? "/" : href}
+        to={href === "home" ? "/#" : "/#"+href}
       >
         <motion.p className="" >
           {t("nav" + text.toUpperCase())}
         </motion.p>
-      </NavLink>
+      </HashLink>
     </motion.div>
   );
 }
@@ -239,7 +241,7 @@ const MobileMenu = ({
 }) => {
   return (
     <motion.div
-      className="absolute top-0 left-0 z-10 w-screen h-screen font-normal bg-darkPrimary sm:hidden"
+      className="absolute top-0 left-0 z-10 w-screen h-screen font-normal bg-[#25282A] sm:hidden"
       variants={hamFastFadeContainer}
       initial="hidden"
       animate="visible"
@@ -248,7 +250,7 @@ const MobileMenu = ({
       <motion.nav className="flex flex-col mx-8 mt-14">
         {links.slice(0, 8).map((link, index) => {
           const navlink =
-            link.toLowerCase() === "home" ? "/" : `/#${link.toLowerCase()}`;
+            link.toLowerCase() === "home" ? "/" : `#${link.toLowerCase()}`;
           return (
             <div
               href={navlink}

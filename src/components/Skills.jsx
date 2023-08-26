@@ -70,7 +70,7 @@ function showHoverAnimation(e,) {
 
 export default function Skills() {
     return(
-    <div className=" md:mx-auto lg:mx-80">
+    <section className=" md:mx-auto lg:mx-80" id="skills">
         <p className="text-4xl font-semibold text-gray-100 font-sarina">Skills</p>
         <motion.div
             initial={animate && "hidden"}
@@ -106,6 +106,6 @@ export default function Skills() {
                 );
                 })}
         </motion.div>
-    </div>
+    </section>
     )
 }
