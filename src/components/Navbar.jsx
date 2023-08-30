@@ -250,18 +250,19 @@ const MobileMenu = ({
       <motion.nav className="flex flex-col mx-8 mt-14">
         {links.slice(0, 8).map((link, index) => {
           const navlink =
-            link.toLowerCase() === "home" ? "/" : `#${link.toLowerCase()}`;
+            link.toLowerCase() === "home" ? "/" : `/#${link.toLowerCase()}`;
           return (
-            <div
-              href={navlink}
+            <HashLink
+              // href={navlink}
+              to={navlink}
               key={`mobileNav-${index}`}
               onClick={handleClick}
-              className="flex w-auto py-4 text-base font-semibold  capitalize border-b cursor-pointer border-gray-700 text-gray-100"
+              className="flex w-auto py-4 text-base font-semibold capitalize border-b cursor-pointer border-gray-700 text-gray-100"
             >
               <motion.p variants={mobileNavItemSideways}>
                 {t("nav" + link.toUpperCase())}
               </motion.p>
-            </div>
+            </HashLink>
           );
         })}
       </motion.nav>
