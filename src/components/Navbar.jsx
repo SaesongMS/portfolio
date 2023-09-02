@@ -17,16 +17,16 @@ import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 
 
+export const navigationRoutes = [
+  "home",
+  "skills",
+  "projects",
+  "contact me",
+];
 
 /* TopNavbar Component */
 export default function TopNavbar() {
   const navRef = useRef(null);
-  const navigationRoutes = [
-    "home",
-    "skills",
-    "projects",
-    "contact me",
-  ];
 
   const { i18n, t } = useTranslation();
 

@@ -9,7 +9,7 @@ export default function Introduction() {
     const { t } = useTranslation();
 
     return (
-        <div className="flex flex-col md:flex-row md:gap-36 mb-80 mx-auto justify-center lg:mx-80">
+        <div className="flex flex-col md:flex-row mb-80 mx-auto justify-center lg:mx-80">
                 <motion.div
                     initial={animate && "hidden"}
                     whileInView={animate ? "visible" : ""}
@@ -54,7 +54,7 @@ export default function Introduction() {
                     whileInView={animate ? "visible" : ""}
                     variants={fromRightVariant}
                     src="../../programmer.svg"
-                    className="w-80 h-80 rounded-full mx-auto"
+                    className="w-80 h-80 rounded-full ml-auto"
                 />
 
             </div>

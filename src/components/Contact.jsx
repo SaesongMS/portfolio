@@ -77,7 +77,7 @@ export default function Contact() {
         <div className=" md:mx-auto lg:mx-80 mt-10 flex flex-col" id="contact me">
             <div className="w-full max-w-xl mx-auto">
             <p className="text-4xl font-semibold text-gray-100 font-sarina mb-5 text-center">Contact</p>
-                <div className="text-lg font-semibold text-gray-100 font-sarina flex flex-row ">
+                <div className="text-lg font-semibold text-gray-100 font-sarina flex flex-row justify-center md:justify-start">
                     <a href="mailto:mstegierski@gmail.com" className="text-blue-500 hover:text-blue-700">
                         mstegierski@gmail.com
                     </a>
