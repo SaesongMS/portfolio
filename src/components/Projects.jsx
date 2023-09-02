@@ -61,10 +61,10 @@ const Project = ({project, index}) => {
                 whileInView={animate ? "visible" : ""}
                 variants={fromRightVariant}
             >
-                <h1 className="font-bold text-neutral-900 dark:text-neutral-200">
+                <h1 className="font-bold text-neutral-200">
                 {project.name}
                 </h1>
-                <p className="text-sm text-gray-400 dark:text-neutral-400 line-clamp-5">
+                <p className="text-sm text-neutral-400 line-clamp-5">
                 {project.description}
                 </p>
 
@@ -73,7 +73,7 @@ const Project = ({project, index}) => {
                     return (
                     <span
                         key={`${tool}-${index}`}
-                        className="px-2 py-1 text-xs text-gray-500 bg-gray-100 rounded dark:bg-darkPrimary"
+                        className="px-2 py-1 text-xs text-gray-500 bg-gray-100 rounded"
                     >
                         {tool}
                     </span>
@@ -85,18 +85,22 @@ const Project = ({project, index}) => {
                 <NavLink
                     href={project.githubURL}
                     title="Source Code on GitHub"
-                    className="text-gray-500 hover:text-black dark:hover:text-white"
+                    className="text-gray-500 hover:text-white"
                 >
-                    <BsGithub className="w-6 h-6 transition-all hover:scale-110 active:scale-90" />
+                    <div className="transition-all hover:scale-110 active:scale-90">
+                        <BsGithub className="w-6 h-6 transition-all hover:scale-110 active:scale-90" />
+                    </div>
                 </NavLink>
 
                 
                 <NavLink
                 href={project.previewURL}
                 title="Live Preview"
-                className="text-gray-500 hover:text-black dark:hover:text-white"
+                className="text-gray-500 hover:text-white"
                 >
-                    <MdOutlineLink className="w-6 h-6 transition-all hover:scale-110 active:scale-90" />
+                    <div className="transition-all hover:scale-110 active:scale-90">
+                        <MdOutlineLink className="w-6 h-6 transition-all hover:scale-110 active:scale-90" />
+                    </div>
                 </NavLink>
                 </div>
             </motion.div>
@@ -107,7 +111,7 @@ const Project = ({project, index}) => {
 const Image = ({ src, alt }) => {
     return (
         <motion.div 
-            className="relative -mt-[35%] sm:-mt-0 md:-ml-[35%] w-full sm:w-1/2 md:w-8/12 shrink-0 rounded-xl overflow-hidden shadow-2xl before:absolute before:inset-0 dark:before:bg-black/20 before:z-10"
+            className="relative -mt-[35%] sm:-mt-0 md:-ml-[35%] w-full sm:w-1/2 md:w-8/12 shrink-0 rounded-xl overflow-hidden shadow-2xl before:absolute before:inset-0  before:z-10" /*dark:before:bg-black/20 */
             initial={animate && "hidden"}
             whileInView={animate ? "visible" : ""}
             variants={fromLeftVariant}>

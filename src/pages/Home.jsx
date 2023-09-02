@@ -6,7 +6,7 @@ import Contact from "../components/Contact";
 
 export default function Home(){
     return (
-        <>
+        <div className="bg-[#242424]">
         <TopNavbar />
         <div className="mt-20 md:mt-40 lg:mt-80" id="main">
             {/*Introduction section*/}
@@ -18,6 +18,6 @@ export default function Home(){
             {/*Contact section*/}
             <Contact />
         </div>
-        </>
+        </div>
     )
 }
