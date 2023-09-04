@@ -22,7 +22,7 @@ export default function ScrollButton() {
 
     return (
         <BsFillArrowUpCircleFill
-            className={`fixed bottom-10 right-10 w-14 h-14 z-50 cursor-pointer mr-7 md:mr-0  ${showScroll ? "inline" : "hidden"}`}
+            className={`fixed bottom-10 right-10 w-14 h-14 z-50 text-neutral-200 cursor-pointer mr-7 md:mr-0  ${showScroll ? "inline" : "hidden"}`}
             onClick={scrollTop}
         />
     );

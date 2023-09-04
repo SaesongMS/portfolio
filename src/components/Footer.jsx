@@ -4,6 +4,8 @@ import { FadeContainer, popUp } from "../assets/FramerMotionVariants"
 import { useEffect, useState } from "react"
 import { SiSpotify } from "react-icons/si"
 import { HashLink } from "react-router-hash-link";
+import {t} from "i18next"
+import { useTranslation } from "react-i18next"
 
 const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
@@ -41,13 +43,10 @@ const currentlyPlayingSong = async () => {
     return data;
 };
 
-async function fetcher(url) {
-    return fetch(url).then((r) => r.json());
-  }
-
 export default function Footer() {
 
     const [currentSong, setCurrentSong] = useState(null);
+    const {t} = useTranslation();
 
     useEffect(() => {
         const interval = setInterval(async () => {
@@ -59,7 +58,7 @@ export default function Footer() {
       }, []);
 
     return (
-        <footer className="w-screen text-gray-400/50 mb-14 print:hidden">
+        <footer className="w-full text-gray-400/50 mb-14 print:hidden">
             <motion.div
             initial="hidden"
             whileInView="visible"
@@ -80,8 +79,9 @@ export default function Footer() {
                                 >
                                     <motion.p
                                         className="hover:text-white w-fit text-gray-400/50" 
-                                        variants={popUp}>
-                                        {link}
+                                        variants={popUp}
+                                      >
+                                        {t("nav" + link.toUpperCase())}
                                     </motion.p>
                                 </HashLink>
                             );

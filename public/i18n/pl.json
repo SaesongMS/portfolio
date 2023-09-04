@@ -6,5 +6,16 @@
     "mainTitle1": "Cześć, jestem Mateusz",
     "mainTitle2": "Web Developer",
     "mainDescription": "haha naprawde myslales ze to przetlumacze? xD",
-    "mainCV": "CV"
+    "mainCV": "CV",
+    "mainSkills": "Umiejętności",
+    "mainProjects": "Projekty",
+    "mainContact": "Kontakt",
+    "contactName": "Imię i nazwisko", 
+    "contactEmail": "Adres email",
+    "contactMessage": "Wiadomość",
+    "contactSend": "Wyślij",
+    "toastSent": "Wiadomość wysłana!",
+    "toastError": "Przy wysyłaniu wiadomości wystąpił błąd!",
+    "toastCopy": "Skopiowano do schowka!",
+    "toastLoading": "Wysyłanie wiadomości..."
 }

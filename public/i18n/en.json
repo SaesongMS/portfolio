@@ -6,5 +6,16 @@
     "mainTitle1": "Hi, I'm Mateusz",
     "mainTitle2": "Web Developer",
     "mainDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates? Quos, quod. Quisquam, voluptates?",
-    "mainCV": "Resume"
+    "mainCV": "Resume",
+    "mainSkills": "Skills",
+    "mainProjects": "Projects",
+    "mainContact": "Contact",
+    "contactName": "Name",
+    "contactEmail": "Email address",
+    "contactMessage": "Message",
+    "contactSend": "Send",
+    "toastSent": "Message sent!",
+    "toastError": "Failed to send message!",
+    "toastCopy": "Copied to clipboard!",
+    "toastLoading": "Sending..."
 }

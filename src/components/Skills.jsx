@@ -94,12 +94,12 @@ export default function Skills() {
                         onMouseLeave={(e) =>
                             removeHoverAnimation(e)
                         }
-                        className="flex flex-row items-center justify-center gap-4 p-4 origin-center transform border rounded-sm sm:justify-start  hover:bg-white bg-darkPrimary hover:bg-darkSecondary border-neutral-700 md:origin-top group"
+                        className="flex flex-row items-center justify-center gap-4 p-4 origin-center transform border rounded-sm sm:justify-start bg-[#25282A]  hover:bg-white border-neutral-700 md:origin-top group"
                     >
                     <div className="relative transition pointer-events-none select-none group-hover:scale-110 sm:group-hover:scale-100">
                         <Icon className="w-8 h-8" fill="#747bff"/>
                     </div>
-                    <p className="text-sm font-semibold pointer-events-none select-none sm:inline-flex md:text-base">
+                    <p className="text-sm font-semibold pointer-events-none select-none sm:inline-flex md:text-base text-neutral-200">
                         {skill.name}
                     </p>
                     </motion.div>

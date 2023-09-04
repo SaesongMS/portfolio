@@ -6,8 +6,11 @@ import Ripples from "react-ripples"
 import { useRef } from "react"
 import "react-toastify/dist/ReactToastify.css"
 import { HiClipboardCopy } from "react-icons/hi"
+import { useTranslation } from "react-i18next"
 
 export default function Contact() {
+
+    const { t } = useTranslation();
 
     const sendButtonRef = useRef(null);
     const formRef = useRef(null);
@@ -32,9 +35,9 @@ export default function Contact() {
         }
 
         sendButtonRef.current.disabled = true;
-        sendButtonRef.current.innerText = "Sending...";
+        sendButtonRef.current.innerText = t("toastSending");
 
-        const toastId = toast.loading("Sending...");
+        const toastId = toast.loading(t("toastSending"));
 
         console.log(import.meta.env.VITE_SERVICE_ID);
 
@@ -46,22 +49,22 @@ export default function Contact() {
         ).then((response) => {
             formRef.current.reset();
             toast.update(toastId, {
-                render: "Message sent!",
+                render: t("toastSent"),
                 type: toast.TYPE.SUCCESS,
                 isLoading: false,
                 autoClose: 3000,
             });
             sendButtonRef.current.disabled = false;
-            sendButtonRef.current.innerText = "Send";
+            sendButtonRef.current.innerText = t("contactSend");
         }).catch((error) => {
             toast.update(toastId, {
-                render: "Failed to send message!",
+                render: t("toastError"),
                 type: toast.TYPE.ERROR,
                 isLoading: false,
                 autoClose: 3000,
             });
             sendButtonRef.current.disabled = false;
-            sendButtonRef.current.innerText = "Send";
+            sendButtonRef.current.innerText = t("contactSend");
         });
     }
 
@@ -74,16 +77,16 @@ export default function Contact() {
 
 
     return (
-        <div className=" md:mx-auto lg:mx-80 mt-10 flex flex-col" id="contact me">
+        <section className=" md:mx-auto lg:mx-80 mt-10 flex flex-col" id="contact me">
             <div className="w-full max-w-xl mx-auto">
-            <p className="text-4xl font-semibold text-gray-100 font-sarina mb-5 text-center">Contact</p>
+            <p className="text-4xl font-semibold text-gray-100 font-sarina mb-5 text-center">{t("mainContact")}</p>
                 <div className="text-lg font-semibold text-gray-100 font-sarina flex flex-row justify-center md:justify-start">
-                    <a href="mailto:mstegierski@gmail.com" className="text-blue-500 hover:text-blue-700">
+                    <a href="mailto:mstegierski@gmail.com" className="text-blue-500 hover:text-blue-700 mb-5">
                         mstegierski@gmail.com
                     </a>
                     <div className="ml-2 text-blue-500 hover:text-blue-700" onClick={() => {
                         navigator.clipboard.writeText("mstegierski@gmail.com");
-                        toast.info("Copied to clipboard!", {
+                        toast.info(t("toastCopy"), {
                             autoClose: 1000,
                             icon: <HiClipboardCopy className="inline-block w-5 h-5 mx-1" />,
                         });
@@ -118,7 +121,7 @@ export default function Contact() {
                         htmlFor="floating_email"
                         className="peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >
-                        Name
+                        {t("contactName")}
                     </label>
                 </motion.div>
                 <motion.div
@@ -137,7 +140,7 @@ export default function Contact() {
                     htmlFor="floating_email"
                     className="peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                    Email address
+                    {t("contactEmail")}
                 </label>
                 </motion.div>
                 <motion.div
@@ -155,7 +158,7 @@ export default function Contact() {
                     htmlFor="floating_message"
                     className="peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                    Message
+                    {t("contactMessage")}
                 </label>
                 </motion.div>
 
@@ -172,7 +175,7 @@ export default function Contact() {
                     type="submit"
                     className="relative w-full px-4 py-3 overflow-hidden text-sm font-medium text-center text-white transition duration-300 rounded-lg outline-none bg-neutral-800 dark:bg-darkSecondary active:scale-95 disabled:opacity-50 disabled:active:scale-100"
                     >
-                    Send
+                    {t("contactSend")}
                     </button>
                 </Ripples>
                 </motion.div>
@@ -181,6 +184,6 @@ export default function Contact() {
                 theme={"dark"}
                 style={{ zIndex: 1000 }}
             />
-        </div>
+        </section>
     )
 }

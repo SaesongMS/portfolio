@@ -34,20 +34,20 @@ export default function Projects() {
     ]
 
     return (
-        <div className="md:mx-auto lg:mx-80 " id="projects">
+        <section className="md:mx-auto lg:mx-80" id="projects">
             <p className="text-4xl font-semibold text-gray-100 font-sarina">Projects</p>
             <motion.div
             initial="hidden"
             whileInView="visible"
             variants={FadeContainer}
-            className="grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%]"
+            className="flex flex-col items-center md:ml-20 gap-4"
             transition={{ staggerChildren: 0.5 }}
             >
                 {projects.map((project, index) => (
                     <Project key={index} project={project} index={index} />
                 ))}
             </motion.div>
-        </div>
+        </section>
     );
 }
 

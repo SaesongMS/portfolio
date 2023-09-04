@@ -1,8 +1,15 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-:root {
+/* * {
+  outline: 1px solid red;
+} */
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -27,13 +34,13 @@ a:hover {
   color: #535bf2;
 }
 
-/* body {
+body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-} */
+}
 
 h1 {
   font-size: 3.2em;
@@ -57,7 +64,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 /* @media (prefers-color-scheme: light) {
   :root {

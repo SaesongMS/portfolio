@@ -9,7 +9,7 @@ export default function Introduction() {
     const { t } = useTranslation();
 
     return (
-        <div className="flex flex-col md:flex-row mb-80 mx-auto justify-center lg:mx-80">
+        <section className="flex flex-col md:flex-row mb-80 mx-auto justify-center lg:mx-80" id="introduction">
                 <motion.div
                     initial={animate && "hidden"}
                     whileInView={animate ? "visible" : ""}
@@ -57,6 +57,6 @@ export default function Introduction() {
                     className="w-80 h-80 rounded-full ml-auto"
                 />
 
-            </div>
+        </section>
     );
 }

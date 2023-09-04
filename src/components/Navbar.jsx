@@ -9,16 +9,12 @@ import {
 } from "../assets/FramerMotionVariants";
 import { NavLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-// import { useDarkMode } from "../context/darkModeContext";
-// import { navigationRoutes } from "../utils/utils";
 import Logo from "./Logo";
-// import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 
 
 export const navigationRoutes = [
-  "home",
   "skills",
   "projects",
   "contact me",
@@ -241,7 +237,7 @@ const MobileMenu = ({
 }) => {
   return (
     <motion.div
-      className="absolute top-0 left-0 z-10 w-screen h-screen font-normal bg-[#25282A] sm:hidden"
+      className="absolute top-0 left-0 z-10 w-full h-full font-normal bg-[#25282A] sm:hidden"
       variants={hamFastFadeContainer}
       initial="hidden"
       animate="visible"
