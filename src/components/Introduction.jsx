@@ -1,5 +1,5 @@
 
-import { motion, useAnimation, AnimatePresence, animate } from "framer-motion";
+import { motion, animate } from "framer-motion";
 import { fromRightVariant, fromLeftVariant } from "../assets/FramerMotionVariants";
 import {HiOutlineDownload} from "react-icons/hi"
 import { useTranslation } from "react-i18next";
@@ -42,12 +42,14 @@ export default function Introduction() {
                             {t("mainDescription")}
                         </p>
                     </div>
-                    <button href="https://i.imgur.com/FSKQxDG.gif" className="px-3 py-2 mt-5 text-base font-semibold text-gray-100 bg-[#646cff] rounded-md hover:bg-darkPrimary flex items-center">
-                        <p>
-                            {t("mainCV")}
-                        </p>
-                        <HiOutlineDownload className="inline-block w-5 h-5 mx-1"/>
-                    </button>
+                    <a href="https://i.imgur.com/FSKQxDG.gif">
+                        <button className="px-3 py-2 mt-5 text-base font-semibold text-gray-100 bg-[#646cff] rounded-md hover:bg-darkPrimary flex items-center">
+                            <p>
+                                {t("mainCV")}
+                            </p>
+                            <HiOutlineDownload className="inline-block w-5 h-5 mx-1"/>
+                        </button>
+                    </a>
                 </motion.div>
                 <motion.img
                     initial={animate && "hidden"}

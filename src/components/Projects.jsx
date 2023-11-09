@@ -3,39 +3,47 @@ import { FadeContainer, fromLeftChildren, fromLeftVariant, fromRightVariant } fr
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineLink } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
 
+    const { t } = useTranslation();
+
     const projects = [
         {
-            name: "Project 1",
-            description: "Description 1",
-            image: "https://i.imgur.com/FSKQxDG.gif",
-            stack: ["HTML", "CSS", "Javascript", "JQuery"],
+            name: t("project1Name"),
+            description: t("project1Description"),
+            image: "https://raw.githubusercontent.com/SaesongMS/spotify-api-training/main/public/home.JPG",
+            stack: ["HTML", "TailwindCSS", "Javascript", "React"],
+            githubURL: "https://github.com/SaesongMS/spotify-api-training",
+            previewURL: "https://spotify-top-stats.netlify.app/"
         },
         {
-            name: "Project 2",
-            description: "Description 2",
-            image: "https://i.imgur.com/FSKQxDG.gif",
-            stack: ["C#", "Laravel", "MySQL"]
+            name: t("project2Name"),
+            description: t("project2Description"),
+            image: "https://raw.githubusercontent.com/SaesongMS/aspnet-react-mongo-docker-stack/main/examples/home.JPG",
+            stack: ["ASP.NET", "C#", "HTML", "TailwindCSS", "Javascript", "React", "MongoDB"],
+            githubURL: "https://github.com/SaesongMS/aspnet-react-mongo-docker-stack"
         },
         {
-            name: "Project 3",
-            description: "Description 3",
-            image: "https://i.imgur.com/FSKQxDG.gif",
-            stack: ["React", "TailwindCSS", "MongoDB", "Express", "NodeJS", "Mongoose"]
+            name: t("project3Name"),
+            description: t("project3Description"),
+            image: "https://raw.githubusercontent.com/SaesongMS/laravel-restaurant/main/examples/reservation.JPG",
+            stack: ["PHP", "Laravel", "HTML", "TailwindCSS", "MySQL"],
+            githubURL: "https://github.com/SaesongMS/laravel-restaurant"
         },
         {
-            name: "Project 4",
-            description: "Description 4",
-            image: "https://i.imgur.com/FSKQxDG.gif",
-            stack: ["HTML", "CSS",],
+            name: t("project4Name"),
+            description: t("project4Description"),
+            image: "https://i.imgur.com/RGY7nlq.jpg",
+            stack: ["ASP.NET", "C#", "HTML", "TailwindCSS", "Javascript", "SolidJS", "PostgreSQL"],
+            soon: true
         }
     ]
 
     return (
         <section className="md:mx-auto lg:mx-80" id="projects">
-            <p className="text-4xl font-semibold text-gray-100 font-sarina">Projects</p>
+            <p className="text-4xl font-semibold text-gray-100 font-sarina">{t("mainProjects")}</p>
             <motion.div
             initial="hidden"
             whileInView="visible"
@@ -52,6 +60,7 @@ export default function Projects() {
 }
 
 const Project = ({project, index}) => {
+    const { t } = useTranslation();
     return(
         <div className=" bg-[#25282A] p-5 sm:p-10 flex flex-col sm:flex-row nth-2n:sm:flex-row gap-8 items-center max-w-2xl shadow-md rounded-lg mt-[30%] sm:mt-8 transition-all">
             <Image key={index} src={project.image} alt={project.name} />
@@ -64,7 +73,7 @@ const Project = ({project, index}) => {
                 <h1 className="font-bold text-neutral-200">
                 {project.name}
                 </h1>
-                <p className="text-sm text-neutral-400 line-clamp-5">
+                <p className="text-sm text-neutral-400">
                 {project.description}
                 </p>
 
@@ -82,7 +91,7 @@ const Project = ({project, index}) => {
                 </div>
 
                 <div className="flex items-center gap-4 p-2 mt-auto w-fit">
-                <NavLink
+                {project.githubURL && <a
                     href={project.githubURL}
                     title="Source Code on GitHub"
                     className="text-gray-500 hover:text-white"
@@ -90,10 +99,11 @@ const Project = ({project, index}) => {
                     <div className="transition-all hover:scale-110 active:scale-90">
                         <BsGithub className="w-6 h-6 transition-all hover:scale-110 active:scale-90" />
                     </div>
-                </NavLink>
+                </a>}
+                
 
                 
-                <NavLink
+                {project.previewURL && <a
                 href={project.previewURL}
                 title="Live Preview"
                 className="text-gray-500 hover:text-white"
@@ -101,7 +111,12 @@ const Project = ({project, index}) => {
                     <div className="transition-all hover:scale-110 active:scale-90">
                         <MdOutlineLink className="w-6 h-6 transition-all hover:scale-110 active:scale-90" />
                     </div>
-                </NavLink>
+                </a>}
+                {project.soon && <div className="text-gray-500 hover:text-white">
+                    <div className="transition-all hover:scale-110 active:scale-90">
+                        <p className="font-semibold text-sm">{t("projectSoon")}</p>
+                    </div>
+                    </div>}
                 </div>
             </motion.div>
         </div>

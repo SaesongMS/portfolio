@@ -1,5 +1,5 @@
 /* Importing Modules */
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import {
   FadeContainer,

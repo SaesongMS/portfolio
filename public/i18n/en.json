@@ -5,7 +5,7 @@
     "navCONTACT ME": "Contact",
     "mainTitle1": "Hi, I'm Mateusz",
     "mainTitle2": "Web Developer",
-    "mainDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates? Quos, quod. Quisquam, voluptates?",
+    "mainDescription": "I’m currently finishing my Engineering degree in Computer Science at the Lublin Univeristy of Technology. I specialize in web development both from the frontend and the backend side. I’m a hard-working person who is always eager to learn new things, with solid foundation in modern solutions. I’m also a team player and I’m not afraid of new challenges.",
     "mainCV": "Resume",
     "mainSkills": "Skills",
     "mainProjects": "Projects",
@@ -17,5 +17,14 @@
     "toastSent": "Message sent!",
     "toastError": "Failed to send message!",
     "toastCopy": "Copied to clipboard!",
-    "toastLoading": "Sending..."
+    "toastLoading": "Sending...",
+    "project1Name": "Spotify Top Stats",
+    "project1Description": "Frontend only application that uses the Spotify API to display a user's or artist's top artists and tracks. The user can select a time range and create a playlist of their top tracks.",
+    "project2Name": "Watchlist",
+    "project2Description": "Planned/Watched list application for movies and anime. The user can add movies and anime to their watchlist and change their status for watched/planned. The application uses the external APIs to get the data",
+    "project3Name": "Restaurant table reservation",
+    "project3Description": "Fullstack application for restaurant table reservation. The user can select a date and time and book a table. All the data is customizable via the admin panel.",
+    "project4Name": "Trackify",
+    "project4Description": "Project for my Engineering Thesis. Social media application inspired by Last.FM and Rate Your Music. The user can connect their Spotify account and track their listening history. Users of the app will be able to view the most popular and favourite acts of a selected profile, or of all app users, and create collages and summaries based on this data. The application will allow ratings and comments for selected entities, and will offer typical social networking functionalities such as observing other users or publishing comments on their profiles.",
+    "projectSoon": "Coming soon..."
 }

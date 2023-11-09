@@ -11,6 +11,7 @@ import {
 } from "react-icons/si"
 import { motion, animate } from "framer-motion"
 import { FadeContainer, popUp } from "../assets/FramerMotionVariants";
+import { useTranslation } from "react-i18next";
 
 const skills = [
     {
@@ -69,9 +70,10 @@ function showHoverAnimation(e,) {
   }
 
 export default function Skills() {
+    const { t } = useTranslation();
     return(
     <section className=" md:mx-auto lg:mx-80" id="skills">
-        <p className="text-4xl font-semibold text-gray-100 font-sarina">Skills</p>
+        <p className="text-4xl font-semibold text-gray-100 font-sarina">{t("mainSkills")}</p>
         <motion.div
             initial={animate && "hidden"}
             whileInView={animate ? "visible" : ""}

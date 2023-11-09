@@ -5,7 +5,7 @@
     "navCONTACT ME": "Kontakt",
     "mainTitle1": "Cześć, jestem Mateusz",
     "mainTitle2": "Web Developer",
-    "mainDescription": "haha naprawde myslales ze to przetlumacze? xD",
+    "mainDescription": "Jestem studentem ostaniego semestru studiów inżynierskich na kierunku Informatyka na Politechnice Lubelskiej. Specjalizuję się w tworzeniu stron internetowych zarówno od strony frontendowej, jak i backendowej. Jestem osobą pracowitą, która zawsze chętnie uczy się nowych rzeczy i ma solidnyne podstawy w nowoczesnych rozwiązaniach. Lubię pracować w zespole i nie boję się nowych wyzwań.",
     "mainCV": "CV",
     "mainSkills": "Umiejętności",
     "mainProjects": "Projekty",
@@ -17,5 +17,14 @@
     "toastSent": "Wiadomość wysłana!",
     "toastError": "Przy wysyłaniu wiadomości wystąpił błąd!",
     "toastCopy": "Skopiowano do schowka!",
-    "toastLoading": "Wysyłanie wiadomości..."
+    "toastLoading": "Wysyłanie wiadomości...",
+    "project1Name": "Spotify Top Stats",
+    "project1Description": "Aplikacja wykorzystująca interfejs API Spotify do wyświetlania najlepszych wykonawców i utworów użytkownika lub artysty. Użytkownik może wybrać zakres czasowy i utworzyć playliste na podstawie swoich najlepszych utworów.",
+    "project2Name": "Lista obejrzanych filmów i anime",
+    "project2Description": "Aplikacja z listą zaplanowanych/obejrzanych filmów i anime. Użytkownik może dodawać filmy i anime do swojej listy obserwowanych i zmieniać ich status na oglądane/planowane. Aplikacja wykorzystuje zewnętrzne API do pobierania danych",
+    "project3Name": "Rezerwacja stolika w restauracji",
+    "project3Description": "Aplikacja do rezerwacji stolika w restauracji. Użytkownik może wybrać datę i godzinę oraz zarezerwować stolik. Wszystkie wyświetlane dane można dostosować za pomocą panelu administracyjnego.",
+    "project4Name": "Trackify",
+    "project4Description": "Projekt w ramach mojej pracy inżynierskiej. Aplikacja społecznościowa inspirowana Last.FM i Rate Your Music. Użytkownik może podłączyć swoje konto Spotify i śledzić historię słuchania. Użytkownicy aplikacji będą mogli przeglądać najpopularniejsze i ulubione utwory wybranego profilu lub wszystkich użytkowników aplikacji oraz tworzyć kolaże i podsumowania na podstawie tych danych. Aplikacja umożliwi ocenianie i komentowanie wybranych utworów, a także zaoferuje typowe funkcje społecznościowe, takie jak obserwowanie innych użytkowników czy publikowanie komentarzy na ich profilach.",
+    "projectSoon": "Wkrótce..."
 }
