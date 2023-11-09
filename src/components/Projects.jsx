@@ -35,7 +35,7 @@ export default function Projects() {
         {
             name: t("project4Name"),
             description: t("project4Description"),
-            image: "https://i.imgur.com/RGY7nlq.jpg",
+            image: "https://i.imgur.com/B7JQwEz.png",
             stack: ["ASP.NET", "C#", "HTML", "TailwindCSS", "Javascript", "SolidJS", "PostgreSQL"],
             soon: true
         }
