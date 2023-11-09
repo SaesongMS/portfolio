@@ -42,7 +42,7 @@ export default function Introduction() {
                             {t("mainDescription")}
                         </p>
                     </div>
-                    <a href="https://i.imgur.com/FSKQxDG.gif">
+                    <a href="https://drive.google.com/file/d/1RZ3B3SO9I0FL6M0OG18J9DwK_BMR6-YD/view?usp=sharing">
                         <button className="px-3 py-2 mt-5 text-base font-semibold text-gray-100 bg-[#646cff] rounded-md hover:bg-darkPrimary flex items-center">
                             <p>
                                 {t("mainCV")}
