@@ -1,8 +1,7 @@
 import { motion, animate } from "framer-motion";
-import { FadeContainer, fromLeftChildren, fromLeftVariant, fromRightVariant } from "../assets/FramerMotionVariants";
+import { FadeContainer, fromLeftVariant, fromRightVariant } from "../assets/FramerMotionVariants";
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineLink } from "react-icons/md";
-import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Projects() {
@@ -10,6 +9,14 @@ export default function Projects() {
     const { t } = useTranslation();
 
     const projects = [
+        {
+            name: t("project4Name"),
+            description: t("project4Description"),
+            image: "https://i.imgur.com/SF8pr0a.jpg",
+            stack: ["ASP.NET", "C#", "HTML", "TailwindCSS", "Javascript", "SolidJS", "PostgreSQL"],
+            // soon: true,
+            githubURL: "https://github.com/SaesongMS/spotify-tracking-sns"
+        },
         {
             name: t("project1Name"),
             description: t("project1Description"),
@@ -32,13 +39,7 @@ export default function Projects() {
             stack: ["PHP", "Laravel", "HTML", "TailwindCSS", "MySQL"],
             githubURL: "https://github.com/SaesongMS/laravel-restaurant"
         },
-        {
-            name: t("project4Name"),
-            description: t("project4Description"),
-            image: "https://i.imgur.com/B7JQwEz.png",
-            stack: ["ASP.NET", "C#", "HTML", "TailwindCSS", "Javascript", "SolidJS", "PostgreSQL"],
-            soon: true
-        }
+        
     ]
 
     return (
