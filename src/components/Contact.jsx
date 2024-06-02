@@ -22,8 +22,8 @@ export default function Contact() {
 
         const data = {
             to_name: "Mateusz Stęgierski",
-            name: e.target.name.value,
-            email: e.target.email.value,
+            user_name: e.target.name.value,
+            user_email: e.target.email.value,
             message: e.target.message.value,
         };
 

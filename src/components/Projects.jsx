@@ -12,32 +12,44 @@ export default function Projects() {
         {
             name: t("project4Name"),
             description: t("project4Description"),
+            description2: t("project4Description2"),
             image: "https://i.imgur.com/SF8pr0a.jpg",
-            stack: ["ASP.NET", "C#", "HTML", "TailwindCSS", "Javascript", "SolidJS", "PostgreSQL"],
+            stack: ["ASP.NET", "SolidJS", "PostgreSQL", "Docker", "Spotify API",  "C#", "Javascript"],
+            role: t("project4Role"),
+            type : "Group Project",
             // soon: true,
-            githubURL: "https://github.com/SaesongMS/spotify-tracking-sns"
+            githubURL: "https://github.com/SaesongMS/trackify"
         },
         {
             name: t("project1Name"),
             description: t("project1Description"),
+            description2: t("project1Description2"),
             image: "https://raw.githubusercontent.com/SaesongMS/spotify-api-training/main/public/home.JPG",
-            stack: ["HTML", "TailwindCSS", "Javascript", "React"],
-            githubURL: "https://github.com/SaesongMS/spotify-api-training",
+            stack: ["React", "Javascript", "TailwindCSS", "Spotify API"],
+            role: t("project1Role"),
+            type : "Solo Project",
+            githubURL: "https://github.com/SaesongMS/spotify-top-stats",
             previewURL: "https://spotify-top-stats.netlify.app/"
         },
         {
             name: t("project2Name"),
             description: t("project2Description"),
+            description2: t("project2Description2"),
             image: "https://raw.githubusercontent.com/SaesongMS/aspnet-react-mongo-docker-stack/main/examples/home.JPG",
             stack: ["ASP.NET", "C#", "HTML", "TailwindCSS", "Javascript", "React", "MongoDB"],
-            githubURL: "https://github.com/SaesongMS/aspnet-react-mongo-docker-stack"
+            role: t("project2Role"),
+            type : "Group Project",
+            githubURL: "https://github.com/SaesongMS/watchlist"
         },
         {
             name: t("project3Name"),
             description: t("project3Description"),
+            description2: t("project3Description2"),
             image: "https://raw.githubusercontent.com/SaesongMS/laravel-restaurant/main/examples/reservation.JPG",
             stack: ["PHP", "Laravel", "HTML", "TailwindCSS", "MySQL"],
-            githubURL: "https://github.com/SaesongMS/laravel-restaurant"
+            role: t("project3Role"),
+            type : "Solo Project",
+            githubURL: "https://github.com/SaesongMS/tstygryll"
         },
         
     ]
@@ -71,11 +83,22 @@ const Project = ({project, index}) => {
                 whileInView={animate ? "visible" : ""}
                 variants={fromRightVariant}
             >
+                <div className="flex flex-row justify-between">
                 <h1 className="font-bold text-neutral-200">
                 {project.name}
                 </h1>
-                <p className="text-sm text-neutral-400">
+                <p className="text-sm text-gray-500">
+                    {project.type}
+                </p>
+                </div>
+                <p className="text-sm text-[#747bff]">
+                    {project.role}
+                </p>
+                <p id="desc1" className="text-sm text-neutral-400">
                 {project.description}
+                </p>
+                <p id="desc2" className="text-sm text-neutral-400">
+                {project.description2}
                 </p>
 
                 <div className="flex flex-wrap items-center gap-1">
